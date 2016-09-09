@@ -55,6 +55,30 @@ class PhonesController < ApplicationController
     end
   end
 
+  def search_phone
+    @phones = []
+    query = params[:query]
+
+    agent = Mechanize.new
+    agent.get('http://www.gsmarena.com')
+    search_form = agent.page.forms.first
+    search_form.sName = query
+    search_form.submit
+    page = page = Nokogiri::HTML(open(agent.page.uri.to_s))
+
+    page.css('.makers li').each do |phone_info|
+      @phones << [phone_info.css('span').text.capitalize,
+                  phone_info.css('a').attr('href').text,
+                  phone_info.css('img').attr('src').text]
+    end
+    # puts "***********************************"
+    # puts @phones.inspect
+    # puts @phones.count
+    # puts "***********************************"
+    respond_to do |format|
+      format.js
+    end
+  end
 
   private
 

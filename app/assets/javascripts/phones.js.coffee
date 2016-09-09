@@ -18,3 +18,13 @@ jQuery ->
       $.ajax phone_path_with_params,
         type: 'GET'
         dataType: 'script'
+
+  $(".js-search").keyup ->
+    query = $('.js-search').val()
+    phone_path = $('.js-search').data('ajax-path')
+    phone_path_with_params = "#{phone_path}?query=#{query}"
+
+    if query
+      $.ajax phone_path_with_params,
+        type: 'GET'
+        dataType: 'script'

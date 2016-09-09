@@ -14,5 +14,22 @@
 <br>
 
 <table class="table table-bordered phone_info">
+</table>
 
+<br>
+
+<div class="row">
+  <%= form_tag search_phone_path, method: 'get', 
+                                  id: "search_phone",
+                                  class: 'input-group' do %>
+    <%= text_field_tag :search, params[:search], { placeholder: 'Search for...',
+                                                   class: "form-control js-search",
+                                                   data: {ajax_path: search_phone_path}}%>
+    <span class="input-group-btn">
+      <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+    </span>
+  <% end %>
+</div>
+
+<table class="table table-bordered finded_phones">
 </table>

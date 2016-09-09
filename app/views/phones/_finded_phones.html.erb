@@ -1,0 +1,8 @@
+<tbody>
+  <%- @phones.each do |phone|%>
+    <tr>
+      <th> <%= link_to phone[0], phone[1] %> </th>
+      <td> <%= image_tag phone[2] %></td>
+    </tr>
+  <%end%>
+</tbody>
