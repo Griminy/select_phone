@@ -15,3 +15,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.js-models').css({'display':'none'});
+  $('.js-models-label').css({'display':'none'});
+  $('.phone_info').css({'display':'none'});
+});

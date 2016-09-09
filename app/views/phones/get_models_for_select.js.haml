@@ -1,5 +1,6 @@
 - if @brand_models.blank?
-  == $('#model').attr('disabled', 'disabled');
+  == $('.js-models').css({'display':'none'})
 - else
   == var $element = $("#{j render('phones/form_models_for_select_ajax')}");
-  == $('#model').empty().append($element).removeAttr('disabled');
+  == $('.js-models-label').slideDown();
+  == $('#model').empty().append($element).slideDown();

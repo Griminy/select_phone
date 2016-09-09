@@ -6,10 +6,9 @@
                             prompt: "Choose brand of phone"} %>
 
 
-  <%= label_tag 'Model:' %>
+  <%= label_tag  :model, 'Model:', class: 'js-models-label'%>
   <%= select_tag :model, options_for_select(@brand_models), 
-                         { class: 'form-control',
-                           disabled: true,
+                         { class: 'form-control js-models',
                            data: {ajax_path: get_phone_info_path}, 
                            prompt: "Choose model of phone"}%>
 <br>

@@ -17,9 +17,6 @@ class PhonesController < ApplicationController
                           model_info.css('a').attr('href').text]
       end
     end
-    puts "***********************************"
-    puts @brand_models.inspect
-    puts "***********************************"
     respond_to do |format|
       format.js
     end
@@ -48,11 +45,11 @@ class PhonesController < ApplicationController
         @info << info
       end
     end
-    puts "***********************************"
-    puts @categories.inspect
-    puts @titles.inspect
-    puts @info.inspect
-    puts "***********************************"
+    # puts "***********************************"
+    # puts @categories.inspect
+    # puts @titles.inspect
+    # puts @info.inspect
+    # puts "***********************************"
     respond_to do |format|
       format.js
     end
