@@ -1,0 +1,19 @@
+<h1> Choose phone </h1>
+  <%= label_tag  'Brand:' %>
+  <%= select_tag :brand, options_for_select(@brands), 
+                          { class: 'form-control', 
+                            data: {ajax_path: get_models_for_select_path}, 
+                            prompt: "Choose brand of phone"} %>
+
+
+  <%= label_tag 'Model:' %>
+  <%= select_tag :model, options_for_select(@brand_models), 
+                         { class: 'form-control',
+                           disabled: true,
+                           data: {ajax_path: get_phone_info_path}, 
+                           prompt: "Choose model of phone"}%>
+<br>
+
+<table class="table table-bordered phone_info">
+
+</table>

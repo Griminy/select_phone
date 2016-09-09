@@ -1,0 +1,10 @@
+<tbody>
+  <%- @categories.count.times do |i|%>
+    <%- @titles[i-1].count.times do |t_i|%>
+      <tr>
+        <th> <%= @titles[i-1][t_i-1]%> </th>
+        <td> <%= @info[i-1][t_i-1]  %> </td>
+      </tr>
+    <%end%>
+  <%end%>
+</tbody>

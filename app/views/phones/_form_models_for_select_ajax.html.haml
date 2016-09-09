@@ -1,0 +1,4 @@
+- unless @brand_models.blank?
+  - @brand_models.each do |p|
+    %option(value="#{p.last}")
+      = p.first
