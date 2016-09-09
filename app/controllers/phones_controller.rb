@@ -68,7 +68,7 @@ class PhonesController < ApplicationController
 
     page.css('.makers li').each do |phone_info|
       @phones << [phone_info.css('span').text.capitalize,
-                  phone_info.css('a').attr('href').text,
+                  "http://www.gsmarena.com/#{phone_info.css('a').attr('href').text}",
                   phone_info.css('img').attr('src').text]
     end
     # puts "***********************************"
